@@ -1,0 +1,10 @@
+<%= form_for(@new_post) do |f| %>
+<%= f.text_area :comment%>
+<%= f.submit "Submit" %>
+<% end %>
+
+<ul>
+    <% @all_posts.each do |p|%>
+	<li><%= p.comment %>
+    <% end %>
+</ul>
