@@ -1,10 +1,26 @@
-<%= form_for(@new_post) do |f| %>
-<%= f.text_area :comment%>
-<%= f.submit "Submit" %>
-<% end %>
+ <div class="header">
+      <div class="container">
+        <h1>threadly</h1>
+      </div>
+    </div>
 
-<ul>
-    <% @all_posts.each do |p|%>
-	<li><%= p.comment %>
-    <% end %>
-</ul>
+    <div class="main">
+      <div class="container">
+       
+        <div class="posts">
+        <%= form_for(@new_post) do |f| %>
+        <div class="postBody"><%= f.text_area :comment %></div>
+          <div class="post"><%= f.submit "Submit" %></div>
+        <% end %>
+          
+        </div>
+
+        <ul class="comments">
+          <% @all_posts.each do |p| %>
+ 				 <li><%= p.comment %></li>
+  			<% end %>
+        </ul>
+
+      </div>
+    </div>
+
